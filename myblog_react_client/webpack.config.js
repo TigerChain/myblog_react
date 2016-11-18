@@ -7,10 +7,18 @@ module.exports = {
   module:{
     loaders:[
       {
-			test: /\.js$/,
-			exclude: /node_modules/,
-	    loader: 'babel',//在webpack的module部分的loaders里进行配置即可
-	    }
+  			test: /\.js$/,
+  			exclude: /node_modules/,
+  	    loader: 'babel',//在webpack的module部分的loaders里进行配置即可
+      },
+      {
+	    	test: /\.css$/,
+	      loader: 'style!css?modules'//添加对样式表的处理
+	    },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=8192'
+      }
     ]
   },
   devServer:{
