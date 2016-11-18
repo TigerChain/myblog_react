@@ -6,7 +6,11 @@ import MenuItem from 'material-ui/MenuItem';
 
 import styles from '../css/main.css' ;
 import MainHeadView from './MainHeadView';
+import MainCardView from './MainCardView' ;
 
+/**
+ * 博客主页
+ */
 class Main extends React.Component {
 
   constructor(props){
@@ -42,21 +46,25 @@ class Main extends React.Component {
           <span className={styles.belowAvatorViewTestStyle}>我是一个android开发者，但是我对技术比较感兴趣</span>
         </div>
 
-        <div className={styles.cardViewStyle}>
-
-        </div>
+        {/* 中间的三个卡片布局 */}
+        <MainCardView />
 
         <div className={styles.belowCardViewStyle}>
 
         </div>
 
         <div className={styles.copyRightStyle}>
+          <span className={styles.copyRightTextStyle}>copyRight:2016-2020 </span>
+          <span className={styles.copyRightTextStyle}>Code Write By @JunJun using React.js & Material-UI.</span>
           
-        </div>
+      </div>
         <Drawer width={200} open={this.state.open} >
-          <AppBar title="AppBar" style={{fontsize:60}}
-            onTouchTap = {this.handleToggle.bind(this)}
-            />
+          <div
+            className={styles.leftDrawTopViewStyle}
+            onTouchTap={this.handleToggle.bind(this)}
+            >
+              <span className={styles.leftDrawTopViewTopTextStyle}>分类</span>
+            </div>
             <MenuItem>Menu Item</MenuItem>
             <MenuItem>Menu Item 2</MenuItem>
         </Drawer>

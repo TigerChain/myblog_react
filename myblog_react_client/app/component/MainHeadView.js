@@ -15,7 +15,6 @@ class MainHeadView extends React.Component{
         <span className={styles.bolgTitleStyle}>JunJun's blog</span>
         <span className={styles.bolgSubTitleStyle}>This is My Blog I'm a Androider,I Love Technology,My motto is Never GiveUp</span>
       </div>
-
     ) ;
   }
 }
