@@ -120,3 +120,8 @@
   font-size: 15px;
   color:#fff;
 }
+
+/*路由link的样式 去掉下划线等*/
+.linkStyle{
+  text-decoration: none;
+}

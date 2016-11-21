@@ -56,7 +56,7 @@ class Main extends React.Component {
         <div className={styles.copyRightStyle}>
           <span className={styles.copyRightTextStyle}>copyRight:2016-2020 </span>
           <span className={styles.copyRightTextStyle}>Code Write By @JunJun using React.js & Material-UI.</span>
-          
+
       </div>
         <Drawer width={200} open={this.state.open} >
           <div

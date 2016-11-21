@@ -1,0 +1,24 @@
+.cardViewStyle{
+  display: flex;
+  flex:1;
+  margin-bottom: 20px;
+  border-width: 2px;
+  padding: 20px;
+  height: 210px;
+  border-radius: 2px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  flex-direction: column;
+  justify-content: space-between;
+}
+/*文章列表item标题样式*/
+.cardTitleViewStyle{
+  display: flex;
+  flex-direction: column;
+}
+
+/*card底部布局 查看更多等*/
+.cardBottomViewStyle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
