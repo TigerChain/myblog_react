@@ -5,6 +5,7 @@ import styles from '../css/main.css' ;
 import MainHeadView from './MainHeadView';
 import MainCardView from './MainCardView' ;
 
+
 /**
  * 首页的子组件
  */
@@ -27,10 +28,6 @@ class Home extends React.Component{
 
       </div>
 
-      <div className={styles.copyRightStyle}>
-        <span className={styles.copyRightTextStyle}>copyRight:2016-2020 </span>
-        <span className={styles.copyRightTextStyle}>Code Write By @JunJun using React.js & Material-UI.</span>
-      </div>
     </div>
     );
   }
