@@ -3,23 +3,39 @@ import styles from '../css/postlist.css' ;
 
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
-
+import Colors from 'material-ui/styles/colors';
 import PostListItemCard from './PostListItemCard' ;
 
 import data from '../data/postlist.json' ;
 
+
+/**
+ * 文章列表
+ */
 class PostList extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      //列表数据
+      data:[]
+    }
   }
 
+  //这里模拟请求数据，有服务器了一换即可
+  componentDidMount() {
+    this.setState({
+      data:data.datas,
+    });
+  }
 
   render() {
-    let that = this;
-    let datas = data.datas;
 
-    let Card = datas.map(function(postItemData,index) {
+
+
+    let that = this;
+    // let datas = data.datas;
+    let Card = this.state.data.map(function(postItemData,index) {
       return(
          <PostListItemCard
            key={index}
@@ -33,14 +49,8 @@ class PostList extends React.Component {
     return (
 
       <div className={styles.rootView}>
-
         {Card}
 
-      {/* <PostListItemCard
-        title="主标题"
-        subTitle="副标题"
-        content="内容"
-        onItemClick={this.onClick}/> */}
 
     </div>
   );
@@ -48,6 +58,8 @@ class PostList extends React.Component {
   onClick(id){
     alert(id) ;
   }
+
+
 }
 
 export default PostList

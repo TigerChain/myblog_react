@@ -22,6 +22,17 @@ import PostList from './component/PostList' ;
 
 import Home from './component/Home' ;
 
+import About from './component/About' ;
+
+import IconButton from 'material-ui/IconButton';
+
+// 导入自定义的gitHub按钮组件
+import GitHubButton from './component/GitHubButton' ;
+
+
+/**
+ * 主框架
+ */
 class Main extends React.Component {
 
   constructor(props){
@@ -45,18 +56,17 @@ class Main extends React.Component {
       <MuiThemeProvider >
       <div>
       <div className={styles.floatView}>
-
-
         <AppBar
           title="JunJun's blog"
-          iconClassNameRight="muidocs-icon-navigation-expand-more"
+          iconElementRight={<GitHubButton />}
           onLeftIconButtonTouchTap={this.handleToggle.bind(this)}
+          showMenuIconButton={true}
+          zDepth={0}
         />
       </div>
 
         {this.props.children}
 
-        
 
         <Drawer width={200} open={this.state.open} >
           <IndexLink to="/" className={styles.linkStyle}>
@@ -70,6 +80,13 @@ class Main extends React.Component {
             <Link to="/home" className={styles.linkStyle}><MenuItem onTouchTap={this.handleToggle.bind(this)}>首页</MenuItem></Link>
             <Link to="/postlist" className={styles.linkStyle}><MenuItem>文章列表</MenuItem></Link>
         </Drawer>
+
+        {/* 版权相关布局 */}
+        <div className={styles.copyRightStyle}>
+          <span className={styles.copyRightTextStyle}>copyRight:2016-2020 </span>
+          <span className={styles.copyRightTextStyle}>Code Write By @JunJun using React.js & Material-UI.</span>
+          <span>{<GitHubButton />}</span>
+        </div>
       </div>
       </MuiThemeProvider>
     ) ;
@@ -91,6 +108,7 @@ ReactDOM.render(
       <IndexRoute component={Home} />
       <Route path="home" component={Home} />
       <Route path="postlist" component={PostList} />
+      <Route path="about" component={About} />
     </Route>
   </Router>
 </div>
