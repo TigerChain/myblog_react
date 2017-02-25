@@ -11,7 +11,6 @@ import MainCardView from './MainCardView' ;
  */
 class Home extends React.Component{
 
-
   render(){
     return (
     <div>

@@ -31,8 +31,6 @@ class PostList extends React.Component {
 
   render() {
 
-
-
     let that = this;
     // let datas = data.datas;
     let Card = this.state.data.map(function(postItemData,index) {
@@ -50,8 +48,6 @@ class PostList extends React.Component {
 
       <div className={styles.rootView}>
         {Card}
-
-
     </div>
   );
   }
